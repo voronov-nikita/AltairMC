@@ -1,0 +1,44 @@
+[
+    {
+        "title": "Тайны железной дороги: РТС квест",
+        "author": "Александр Железнов",
+        "image": "https://source.unsplash.com/random/600x400?railway",
+        "category": "РТС",
+        "link": "/quest/rts-railway"
+    },
+    {
+        "title": "Программирование: ИТ головоломка",
+        "author": "Тимур Гуев, Код поколения",
+        "image": "https://source.unsplash.com/random/600x400?programming",
+        "category": "ИТ",
+        "link": "/quest/it-puzzle"
+    },
+    {
+        "title": "Химическая лаборатория: загадки",
+        "author": "Михаил Крыжановский, Александр Данилов",
+        "image": "https://source.unsplash.com/random/600x400?chemistry",
+        "category": "Химия",
+        "link": "/quest/chemistry-lab"
+    },
+    {
+        "title": "Сетевые технологии: ИТ квест",
+        "author": "Степан Соединий",
+        "image": "https://source.unsplash.com/random/600x400?network",
+        "category": "ИТ",
+        "link": "/quest/network-tech"
+    },
+    {
+        "title": "Путешествие по Транссибу: РТС",
+        "author": "Ольга Рельсова",
+        "image": "https://source.unsplash.com/random/600x400?train",
+        "category": "РТС",
+        "link": "/quest/transsib"
+    },
+    {
+        "title": "Органическая химия: тайны молекул",
+        "author": "Елена Менделеева",
+        "image": "https://source.unsplash.com/random/600x400?molecules",
+        "category": "Химия",
+        "link": "/quest/organic-chem"
+    }
+]
