@@ -5,11 +5,27 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Квесты Altair</title>
         <link rel="stylesheet" href="./main.css" />
+        <link rel="icon" href="./img/logo.ico" class="rel" />
     </head>
     <body>
         <header>
-            <div class="logo">Квесты онлайн</div>
+            <div class="logo">Квесты Детского Технопарка "Альтаир"</div>
         </header>
+
+        <div class="filters">
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Поиск квестов..."
+            />
+            <select id="categoryFilter">
+                <option value="">Все категории</option>
+                <option value="РТС">РТС</option>
+                <option value="ИТ">ИТ</option>
+                <option value="Химия">Химия</option>
+                <option value="Другое">Другое</option>
+            </select>
+        </div>
 
         <div class="quests-container" id="questsContainer">
             <div class="loading">Загрузка квестов...</div>

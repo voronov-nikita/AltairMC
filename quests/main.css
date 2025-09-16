@@ -147,3 +147,61 @@ footer {
     font-size: 18px;
     color: #666;
 }
+
+.filters {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+#searchInput {
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    font-size: 16px;
+    width: 250px;
+    transition: border-color 0.3s;
+    font-family: inherit;
+    color: #1d1d1f;
+    background-color: white;
+}
+
+#searchInput:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+#categoryFilter {
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: inherit;
+    color: #1d1d1f;
+    background-color: white;
+    transition: border-color 0.3s;
+    min-width: 160px;
+}
+
+#categoryFilter:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+/* Адаптив для мобильных устройств */
+@media (max-width: 600px) {
+    .filters {
+        flex-direction: column;
+        gap: 10px;
+        align-items: stretch;
+    }
+
+    #searchInput,
+    #categoryFilter {
+        width: 100%;
+        min-width: unset;
+    }
+}

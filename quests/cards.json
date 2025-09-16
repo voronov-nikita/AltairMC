@@ -1,17 +1,17 @@
 [
     {
         "title": "Тайны железной дороги: РТС квест",
-        "author": "Александр Железнов",
-        "image": "https://source.unsplash.com/random/600x400?railway",
+        "author": "ДТ Альтаир",
+        "image": "./img/backgrounds/railway.png",
         "category": "РТС",
-        "link": "/quest/rts-railway"
+        "link": "./quest/rts-railway"
     },
     {
         "title": "Программирование: ИТ головоломка",
-        "author": "Тимур Гуев, Код поколения",
-        "image": "https://source.unsplash.com/random/600x400?programming",
+        "author": "ДТ Альтаир",
+        "image": "./img/backgrounds/it-puzzle.png",
         "category": "ИТ",
-        "link": "/quest/it-puzzle"
+        "link": "./quest/it-puzzle"
     },
     {
         "title": "Химическая лаборатория: загадки",
@@ -22,10 +22,10 @@
     },
     {
         "title": "Сетевые технологии: ИТ квест",
-        "author": "Степан Соединий",
-        "image": "https://source.unsplash.com/random/600x400?network",
+        "author": "ДТ Альтаир",
+        "image": "./img/backgrounds/network.png",
         "category": "ИТ",
-        "link": "/quest/network-tech"
+        "link": "./quest/it/network"
     },
     {
         "title": "Путешествие по Транссибу: РТС",
