@@ -1,14 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Admin Panel</title>
-    </head>
-    <body>
-        <h1>
-            Панель администратора для запуска служебок, выгрузку детей и так
-            далее
-        </h1>
-    </body>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Авторизация | МК ДТ "Альтаир"</title>
+    <link rel="stylesheet" href="auth.css">
+</head>
+<body>
+    <div class="container">
+        <form id="loginForm" class="auth-panel">
+            <h2>Войдите в свою<br>учётную запись</h2>
+            <label for="email">Адрес электронной почты</label>
+            <input type="email" id="email" placeholder="Введите ваш адрес электронной почты" required>
+            
+            <label for="password">Пароль</label>
+            <div class="password-row">
+                <input type="password" id="password" placeholder="Введите ваш пароль" required>
+                <button type="button" id="togglePwd" class="eye">&#128065;</button>
+            </div>
+            
+            <div class="checkbox-row">
+                <input type="checkbox" id="rememberMe" checked>
+                <label for="rememberMe">Запомнить меня</label>
+            </div>
+            <button type="submit" class="login-btn">Логин</button>
+        </form>
+    </div>
+    <script src="auth.js"></script>
+</body>
 </html>
