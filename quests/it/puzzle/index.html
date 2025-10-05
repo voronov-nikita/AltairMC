@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Кодовый Лабиринт</title>
+        <style>
+            body {
+                background: #121212;
+                color: #e0e0e0;
+                font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+                padding: 20px;
+            }
+            #game-container {
+                background: #1e1e1e;
+                border-radius: 8px;
+                padding: 20px 30px;
+                max-width: 600px;
+                width: 100%;
+                box-shadow: 0 0 20px #00ffcc;
+                text-align: center;
+            }
+            h1 {
+                margin-bottom: 10px;
+                color: #00ffcc;
+            }
+            .question {
+                font-size: 1.2em;
+                margin-bottom: 20px;
+                min-height: 60px;
+            }
+            input[type="text"] {
+                width: 60%;
+                padding: 10px;
+                font-size: 1em;
+                border: none;
+                border-radius: 4px;
+                margin-bottom: 20px;
+                box-sizing: border-box;
+            }
+            button {
+                background: #00ffcc;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 4px;
+                font-size: 1em;
+                cursor: pointer;
+                transition: background 0.3s;
+                color: #121212;
+            }
+            button:hover {
+                background: #00d1a6;
+            }
+            #message {
+                margin-top: 15px;
+                height: 24px;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="game-container">
+            <h1>Кодовый Лабиринт</h1>
+            <div id="level-display">Уровень 1 из 3</div>
+            <div class="question" id="question-text"></div>
+            <input
+                type="text"
+                id="answer-input"
+                placeholder="Введите ответ..."
+                autocomplete="off"
+            />
+            <br />
+            <button id="check-btn">Проверить</button>
+            <div id="message"></div>
+            <button id="next-btn" style="display: none; margin-top: 15px">
+                Следующий уровень
+            </button>
+        </div>
+
+        <script>
+            const levels = [
+                {
+                    question:
+                        "Какой символ используется для комментариев в языке Python?",
+                    answer: "#",
+                },
+                {
+                    question: "Рассчитайте сумму: 5 + 7 * 2",
+                    answer: "19",
+                },
+                {
+                    question:
+                        'Расшифруйте слово "lipps" с помощью шифра Цезаря со сдвигом -4',
+                    answer: "hello",
+                },
+            ];
+
+            let currentLevel = 0;
+
+            const questionText = document.getElementById("question-text");
+            const answerInput = document.getElementById("answer-input");
+            const checkBtn = document.getElementById("check-btn");
+            const nextBtn = document.getElementById("next-btn");
+            const message = document.getElementById("message");
+            const levelDisplay = document.getElementById("level-display");
+
+            function loadLevel(level) {
+                levelDisplay.textContent = `Уровень ${level + 1} из ${
+                    levels.length
+                }`;
+                questionText.textContent = levels[level].question;
+                answerInput.value = "";
+                message.textContent = "";
+                nextBtn.style.display = "none";
+                checkBtn.style.display = "inline-block";
+                answerInput.disabled = false;
+                answerInput.focus();
+            }
+
+            function checkAnswer() {
+                const userAnswer = answerInput.value.trim().toLowerCase();
+                const correctAnswer = levels[currentLevel].answer.toLowerCase();
+
+                if (userAnswer === correctAnswer) {
+                    message.style.color = "#00ff88";
+                    message.textContent = "Правильно!";
+
+                    checkBtn.style.display = "none";
+                    answerInput.disabled = true;
+
+                    if (currentLevel < levels.length - 1) {
+                        nextBtn.style.display = "inline-block";
+                    } else {
+                        message.textContent =
+                            "Поздравляем! Вы прошли все уровни.";
+                    }
+                } else {
+                    message.style.color = "#ff4444";
+                    message.textContent = "Неправильно, попробуйте снова.";
+                }
+            }
+
+            function nextLevel() {
+                currentLevel++;
+                if (currentLevel < levels.length) {
+                    loadLevel(currentLevel);
+                }
+            }
+
+            checkBtn.addEventListener("click", checkAnswer);
+            answerInput.addEventListener("keydown", (e) => {
+                if (e.key === "Enter") {
+                    checkAnswer();
+                }
+            });
+            nextBtn.addEventListener("click", nextLevel);
+
+            loadLevel(currentLevel);
+        </script>
+    </body>
+</html>
